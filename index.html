@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Pippi and Rosie — training overview</title>
+  <style>
+    :root { color-scheme:light; --bg:#f4f4f2; --paper:#fff; --ink:#202220; --muted:#676b65; --soft:#eeefec; --line:#e3e5df; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:32px; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:16px; line-height:1.55; }
+    main { max-width:1200px; margin:52px auto; padding:0 32px; }
+    header { display:flex; align-items:flex-end; justify-content:space-between; gap:30px; margin:0 6px 30px; }
+    .eyebrow { font-size:13px; color:var(--muted); margin:0 0 12px; }
+    h1 { font-size:48px; line-height:1.1; letter-spacing:-1.8px; font-weight:600; margin:0 0 14px; }
+    .intro { max-width:580px; font-size:17px; margin:0; color:#4f544e; }
+    nav { display:flex; flex-wrap:wrap; gap:8px; padding-bottom:3px; }
+    a { color:inherit; text-underline-offset:4px; }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #7b887b; outline-offset:4px; }
+    nav a { white-space:nowrap; text-decoration:none; font-size:13px; padding:8px 13px; border-radius:24px; color:var(--muted); }
+    nav a:first-child { background:#e6e9e2; color:var(--ink); }
+    nav a:hover { color:var(--ink); background:#e6e9e2; }
+    .paper { background:var(--paper); border-radius:30px; box-shadow:0 12px 48px #19231907; }
+    h2 { font-weight:600; font-size:24px; line-height:1.25; letter-spacing:-.5px; margin:0 0 18px; }
+    h3 { font-size:16px; font-weight:600; margin:0 0 5px; }
+    p { margin:0 0 12px; }
+    strong { font-weight:600; }
+    .watch-room { padding:28px; }
+    .section-heading { display:flex; align-items:baseline; gap:14px; margin-bottom:22px; }
+    .section-heading h2 { margin:0; }
+    .section-heading p { color:var(--muted); font-size:13px; margin:0; }
+    .watch-layout { display:grid; grid-template-columns:minmax(0,1fr) 286px; gap:28px; align-items:start; }
+    .player-column { min-width:0; }
+    .player-wrap { position:relative; width:100%; min-width:0; background:#161816; border-radius:20px; overflow:hidden; aspect-ratio:16 / 9; min-height:200px; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    iframe { position:absolute; inset:0; display:block; width:100%; height:100%; border:0; }
+    .player-info { padding:21px 3px 3px; }
+    .player-meta { display:flex; align-items:baseline; justify-content:space-between; gap:20px; }
+    .player-meta h3 { font-size:21px; line-height:1.25; letter-spacing:-.3px; margin:0; }
+    .player-meta span { color:var(--muted); font-size:13px; white-space:nowrap; font-variant-numeric:tabular-nums; }
+    #video-note { color:var(--muted); font-size:15px; margin:10px 0 18px; max-width:600px; }
+    .youtube-link { color:var(--muted); font-size:13px; }
+    .playlist { min-width:0; }
+    .playlist-group + .playlist-group { margin-top:18px; }
+    .playlist-group h3 { font-size:12px; font-weight:500; color:var(--muted); margin:0 10px 6px; }
+    .video-choice { width:100%; display:grid; grid-template-columns:22px minmax(0,1fr) auto; align-items:center; gap:9px; border:0; border-radius:14px; padding:11px 10px; margin:2px 0; background:transparent; text-align:left; cursor:pointer; font:inherit; font-size:13px; line-height:1.35; color:var(--ink); }
+    .video-choice:hover { background:#f5f6f2; }
+    .video-choice[aria-pressed="true"] { background:var(--soft); }
+    .video-number { color:#8a8e87; font-size:11px; font-variant-numeric:tabular-nums; }
+    .video-choice[aria-pressed="true"] .video-number { color:var(--ink); }
+    .video-title { font-weight:500; }
+    .duration { color:var(--muted); font-size:11px; white-space:nowrap; font-variant-numeric:tabular-nums; }
+    .reading-layout { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:56px; align-items:start; margin:42px 6px 0; }
+    .summary-panel { padding:30px; box-shadow:none; border-radius:26px; }
+    .takeaways { padding:0; margin:0; list-style:none; }
+    .takeaways li { margin:0 0 16px; font-size:14px; line-height:1.55; }
+    .takeaways li:last-child { margin-bottom:0; }
+    .note { font-size:13px; color:var(--muted); margin:24px 0 0; }
+    .resources { padding:26px 0 0; }
+    .resources h2 { font-size:22px; }
+    .section-intro { color:var(--muted); font-size:13px; margin:-7px 0 20px; }
+    details { margin-bottom:10px; }
+    summary { cursor:pointer; font-size:14px; font-weight:500; padding:7px 0; }
+    details p { margin:4px 0 10px 18px; color:var(--muted); font-size:13px; }
+    details a { display:inline-block; margin:0 0 12px 18px; font-size:12px; color:var(--muted); }
+    footer { margin:36px 10px 8px; color:var(--muted); font-size:12px; max-width:790px; }
+    footer p { margin-bottom:10px; }
+    footer a + a { margin-left:16px; }
+    @media(max-width:1000px) { header { display:block; } nav { margin:20px 0 0 -12px; } .watch-layout { grid-template-columns:minmax(0,1fr) 250px; gap:20px; } .reading-layout { gap:32px; } }
+    @media(max-width:760px) { main { margin:30px auto; padding:0 18px; } h1 { font-size:40px; } header { margin:0 5px 24px; } .watch-room { padding:20px; border-radius:25px; } .watch-layout { grid-template-columns:1fr; gap:30px; } .player-wrap { border-radius:16px; } .playlist { display:grid; grid-template-columns:1fr; } .playlist-group + .playlist-group { margin-top:16px; } .video-choice { min-height:44px; font-size:14px; } .duration { font-size:12px; } .reading-layout { grid-template-columns:1fr; gap:22px; margin:28px 0 0; } .summary-panel { padding:25px; } .resources { padding:12px 8px 0; } nav a { min-height:44px; display:flex; align-items:center; } summary { min-height:44px; } .section-heading { align-items:start; justify-content:space-between; } .section-heading h2 { font-size:22px; } .section-heading p { padding-top:4px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+    @media print { body { background:white; } main { margin:0; max-width:none; } nav,.player-wrap { display:none; } .paper { padding:0; box-shadow:none; } .watch-layout,.reading-layout { display:block; } .playlist { margin:25px 0; } .resources { margin-top:25px; } details { break-inside:avoid; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <p class="eyebrow">Tessa’s training notes · October 16, 2026</p>
+      <h1>Pippi &amp; Rosie</h1>
+      <p class="intro">Reward calm cooperation. Manage shared resources so the dogs don’t need to compete.</p>
+    </div>
+    <nav aria-label="Overview sections">
+      <a href="#videos">Videos</a>
+      <a href="#summary">Brief summary</a>
+      <a href="#handouts">Handouts</a>
+    </nav>
+  </header>
+
+  <section id="videos" class="paper watch-room" aria-labelledby="videos-heading">
+    <div class="section-heading"><h2 id="videos-heading">Watch &amp; practice</h2><p>9 videos</p></div>
+    <div class="watch-layout">
+      <div class="player-column">
+        <div class="player-wrap">
+          <iframe id="video-player" src="https://www.youtube.com/embed/intZE4Q_r5g?playsinline=1&amp;rel=0" title="Name game — YouTube video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="player-info">
+          <div class="player-meta"><h3 id="video-title">Name game</h3><span id="video-duration">0:08</span></div>
+          <p id="video-note">Say one dog’s name, treat that dog, then alternate. Each dog gets a clear turn.</p>
+          <a id="youtube-link" class="youtube-link" href="https://www.youtube.com/shorts/intZE4Q_r5g" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+        </div>
+      </div>
+      <div class="playlist" role="group" aria-label="Choose a video">
+        <div class="playlist-group">
+          <h3>Teamwork</h3>
+          <button class="video-choice" type="button" data-index="0" aria-pressed="true" aria-controls="video-player"><span class="video-number" aria-hidden="true">01</span><span class="video-title">Name game</span><span class="duration">0:08</span></button>
+          <button class="video-choice" type="button" data-index="1" aria-pressed="false" aria-controls="video-player"><span class="video-number" aria-hidden="true">02</span><span class="video-title">Sharing attention</span><span class="duration">1:34</span></button>
+          <button class="video-choice" type="button" data-index="2" aria-pressed="false" aria-controls="video-player"><span class="video-number" aria-hidden="true">03</span><span class="video-title">Training two dogs together</span><span class="duration">0:45</span></button>
+        </div>
+        <div class="playlist-group">
+          <h3>Settling</h3>
+          <button class="video-choice" type="button" data-index="3" aria-pressed="false" aria-controls="video-player"><span class="video-number" aria-hidden="true">04</span><span class="video-title">Relaxation protocol — day 1</span><span class="duration">9:46</span></button>
+          <button class="video-choice" type="button" data-index="4" aria-pressed="false" aria-controls="video-player"><span class="video-number" aria-hidden="true">05</span><span class="video-title">Relaxation with the cat</span><span class="duration">11:20</span></button>
+          <button class="video-choice" type="button" data-index="5" aria-pressed="false" aria-controls="video-player"><span class="video-number" aria-hidden="true">06</span><span class="video-title">Relaxation outdoors</span><span class="duration">5:32</span></button>
+        </div>
+        <div class="playlist-group">
+          <h3>Focus around distractions</h3>
+          <button class="video-choice" type="button" data-index="6" aria-pressed="false" aria-controls="video-player"><span class="video-number" aria-hidden="true">07</span><span class="video-title">Tessa’s deer demo</span><span class="duration">1:06</span></button>
+          <button class="video-choice" type="button" data-index="7" aria-pressed="false" aria-controls="video-player"><span class="video-number" aria-hidden="true">08</span><span class="video-title">Engage–disengage explained</span><span class="duration">Guide</span></button>
+          <button class="video-choice" type="button" data-index="8" aria-pressed="false" aria-controls="video-player"><span class="video-number" aria-hidden="true">09</span><span class="video-title">Focus around distractions</span><span class="duration">8:51</span></button>
+        </div>
+      </div>
+    </div>
+    <p id="player-announcement" class="sr-only" aria-live="polite"></p>
+  </section>
+
+  <div class="reading-layout">
+  <section id="summary" class="paper summary-panel" aria-labelledby="summary-heading">
+    <h2 id="summary-heading">Brief summary</h2>
+    <ul class="takeaways">
+      <li><strong>Prevent competition.</strong> Separate meals and valuable chews. Give each dog a resting spot and predictable turns for attention.</li>
+      <li><strong>Reward calm before trouble starts.</strong> Notice good behavior early. Keep everyone’s responses consistent so pushing and pestering don’t keep paying off.</li>
+      <li><strong>Use everyday routines.</strong> Your dinner → mat. Door opening → wait. Pair the situation with a familiar cue, reward it, then gradually fade the words.</li>
+      <li><strong>Keep it easy.</strong> Train for 5–10 minutes; keep trigger practice to 1–5. Practice settling daily, shortening difficult steps. Pippi can sit or stand. Aim for relaxation, not just staying still.</li>
+      <li><strong>Notice, then check in.</strong> Work far enough from a trigger that the dog can eat and respond. First mark and reward noticing it; later reward voluntarily looking back at you. Add distance if they get stuck staring.</li>
+    </ul>
+    <p class="note"><strong>For Jane at Waginn:</strong> down, go to mat, and gradually longer stays. Continue the previous exercises and add new ones a little at a time.</p>
+  </section>
+  <section id="handouts" class="resources" aria-labelledby="handouts-heading">
+    <h2 id="handouts-heading">Handout notes</h2>
+    <p class="section-intro">Expand a title for the short version and original file.</p>
+    <details><summary>Who controls the resources</summary><p>Fair, predictable access to food, chews, resting spots and attention helps prevent competition. Use separate spaces and reward calm behavior; give the dogs time apart during rebuilding.</p><a href="handouts/HVH_Handout_Who_Controls_the_Resources.docx">Open original handout · Word</a></details>
+    <details><summary>Your dog is always learning</summary><p>Everyday consequences teach habits. Prevent unwanted practice and reward an alternative before the problem starts. For a tricky pattern, record what happened before, what the dog did, and what happened next.</p><a href="handouts/Your%20Dog%20Is%20Always%20Learning.docx">Open original handout · Word</a></details>
+    <details><summary>What your dog is telling you</summary><p>Pestering can reflect what has worked before, including occasional attention or scolding. Look at the pattern and the dog’s needs, then make a consistent plan.</p><a href="handouts/What%20Your%20Dog%20Is%20Telling%20You.docx">Open original handout · Word</a></details>
+    <details><summary>Situations as cues</summary><p>Make ordinary events predict useful behaviors: your dinner → mat, a door opening → wait. Present the situation before a familiar verbal cue, reward, and gradually fade the cue.</p><a href="handouts/Situations%20as%20Cues.docx">Open original handout · Word</a></details>
+    <details><summary>Engage–disengage</summary><p>At a comfortable distance, mark looking at the trigger and feed when the dog turns back. Later, mark the voluntary turn back instead. If the dog cannot eat or respond, increase distance.</p><a href="handouts/engage_disengage.docx">Open original handout · Word</a></details>
+    <details><summary>Reducing leash reactivity</summary><p>The same game with progression criteria: aim for 3–5 successful repetitions before advancing. If the dog fixates for over five seconds in phase two, return to phase one. Keep sessions to 1–5 minutes and move closer only when comfortable.</p><a href="handouts/Reducing%20Leash%20Reactivity_%20The%20Engage-Disengage%20Game%20_%20Karen%20Pryor%20Clicker%20Training.pdf" target="_blank" rel="noopener">Open original handout · PDF</a></details>
+    <details><summary>Protocol for relaxation</summary><p>Reward relaxation while gradually adding movement and distractions. The “15 days” are stages, not a deadline. Repeat stages as needed and use Tessa’s modifications for Pippi and Rosie.</p><a href="handouts/ProtocolforRelaxation.pdf" target="_blank" rel="noopener">Open original handout · PDF</a></details>
+  </section>
+  </div>
+
+  <footer>
+    <p>Based on Tessa Romita’s two emails and seven attachments. Exercise instructions follow her written guidance; video notes use available transcripts and visual samples.</p>
+  </footer>
+</main>
+
+<script>
+  const videos = [{"id": "intZE4Q_r5g", "title": "Name game", "note": "Say one dog’s name, treat that dog, then alternate. Each dog gets a clear turn.", "url": "https://www.youtube.com/shorts/intZE4Q_r5g", "duration": "0:08"}, {"id": "yDbJT4trYq0", "title": "Sharing attention", "note": "Practice staying settled while the other dog gets affection. Tessa also suggests rewarding both together at a comfortable distance.", "url": "https://www.youtube.com/watch?v=yDbJT4trYq0", "duration": "1:34"}, {"id": "yF1307Qvl8A", "title": "Training two dogs together", "note": "Reward the dog doing the exercise and the dog calmly waiting on its bed.", "url": "https://www.youtube.com/watch?v=yF1307Qvl8A", "duration": "0:45"}, {"id": "Fp3YD6Mrzz8", "title": "Relaxation protocol — day 1", "note": "Reward settling while your position and small distractions change. Repeat an easier step whenever needed.", "url": "https://www.youtube.com/watch?v=Fp3YD6Mrzz8", "duration": "9:46"}, {"id": "PXXchXQfVwo", "title": "Relaxation with the cat", "note": "A settling example with another animal nearby. Keep the difficulty comfortable for your dogs.", "url": "https://www.youtube.com/watch?v=PXXchXQfVwo", "duration": "11:20"}, {"id": "zXoGid9qnwQ", "title": "Relaxation outdoors", "note": "Once indoors is comfortable, restart at easy steps in quiet outdoor places.", "url": "https://www.youtube.com/watch?v=zXoGid9qnwQ", "duration": "5:32"}, {"id": "dF_b3cXQ4DQ", "title": "Tessa’s deer demo", "note": "The short example linked inside the engage–disengage handout.", "url": "https://www.youtube.com/watch?v=dF_b3cXQ4DQ", "duration": "1:06"}, {"id": "M5OANGG342Y", "title": "Engage–disengage explained", "note": "The two phases: reward noticing, then reward choosing to look away. Engaging starts at 2:31; disengaging at 4:41.", "url": "https://www.youtube.com/watch?v=M5OANGG342Y", "duration": "Guide"}, {"id": "4qF_4ms-0SM", "title": "Focus around distractions", "note": "Reward voluntary check-ins. Use an early “let’s go” when an approaching distraction will be too difficult.", "url": "https://www.youtube.com/watch?v=4qF_4ms-0SM", "duration": "8:51"}];
+  const player = document.getElementById('video-player');
+  const choices = Array.from(document.querySelectorAll('.video-choice'));
+  choices.forEach(button => {
+    button.addEventListener('click', () => {
+      if (button.getAttribute('aria-pressed') === 'true') return;
+      const video = videos[Number(button.dataset.index)];
+      choices.forEach(choice => choice.setAttribute('aria-pressed', String(choice === button)));
+      player.title = video.title + ' — YouTube video';
+      player.src = 'https://www.youtube.com/embed/' + video.id + '?playsinline=1&rel=0&autoplay=1';
+      document.getElementById('video-title').textContent = video.title;
+      document.getElementById('video-duration').textContent = video.duration;
+      document.getElementById('video-note').textContent = video.note;
+      document.getElementById('youtube-link').href = video.url;
+      document.getElementById('player-announcement').textContent = 'Selected: ' + video.title;
+      if (window.matchMedia('(max-width: 760px)').matches) {
+        player.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block:'start'});
+      }
+    });
+  });
+</script>
+</body>
+</html>
